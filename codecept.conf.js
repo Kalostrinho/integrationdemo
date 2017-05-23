@@ -1,22 +1,20 @@
 exports.config = {
-    tests: "../DaaS/Rules/*_test.js",
-    output: "../Reports",
+    tests: "./*_test.js",
+    output: "./output",
     helpers: {
-        REST: {
-            endpoint: "http://dev-api.aditazz.net/v1"
-        },
-        TestData: {}
+        WebDriverIO: {
+            url: "http://localhost",
+            browser: "chrome"
+        }
     },
     include: {
-        Props: "./environmentProperties",
-        Templates: "./requestTemplates",
-        Common: "./commonFunctions"
+        I: "./steps_file"
     },
     bootstrap: false,
     mocha: {
         reporterOptions: {
-            reportDir: "../Reports"
+            reportDir: "./output"
         }
     },
-    name: "AditazzCodeceptJS"
+    name: "DisneyDemo"
 }
