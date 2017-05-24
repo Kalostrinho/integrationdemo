@@ -3,8 +3,14 @@ exports.config = {
     output: "./output",
     helpers: {
         WebDriverIO: {
-            url: "http://localhost",
-            browser: "chrome"
+            url: "http://digitalonus:d1g1t4l0nu5@exampleworkspace_exampleproject_proda.52.41.58.188.xip.io/petclinic/",
+            browser: "chrome",
+            restart: true,
+            timeouts: {
+                script: 60000,
+                pageLoad: 30000
+            },
+            desiredCapabilities: {}
         }
     },
     include: {
@@ -13,7 +19,8 @@ exports.config = {
     bootstrap: false,
     mocha: {
         reporterOptions: {
-            reportDir: "./output"
+            reportDir: "./output",
+            mochaFile: "./output/results.xml"
         }
     },
     name: "DisneyDemo"
